@@ -1,0 +1,50 @@
+<form class="form-group">
+    <div class="col-sm-5">
+        <h3>
+            Answered Questions:
+        </h3>
+        <div class="row margin-bottom">
+            <input class="form-control custom-width col-xs-8" type="text" ng-model="newQuestion" placeholder="Your question" >
+            <button class="btn pull-right col-xs-2" ng-click="ask()" type="reset">
+                Ask
+            </button>
+            <span class="help-block col-xs-12">Look for your new question in sections "UnAnswered" or "All questions" </span>
+            <span class="help-block col-xs-12">Last answered questions are shown first</span>
+        </div>
+        <div class="table-responsive">
+            <table class="table custom-width">
+                <tbody>
+                    <tr ng-repeat="question in questions | answered">
+                       <td class="item-to-press" ng-click="answersFilter(question.questionId)">
+                             <p class="small text-muted" >{{question.time}}</p>
+                             <p>{{question.questionText}}</p>
+                       </td>
+                   </tr>
+               </tbody> 
+           </table>
+       </div>
+   </div>
+   <div class="col-xs-1"></div>
+   <div class="container col-lg-5 col-sm-6">
+      <h3>Answers:</h3>
+      <div class="row">
+          <input class="form-control custom-width col-md-8 col-xs-8" type="text" ng-model="newAnswer" placeholder="Your answer">
+          <button class="btn col-xs-2 pull-right" ng-click="answer()" type="reset">
+            Answer
+        </button>
+    </div>
+    <h4>Answers to the question: {{clickedQuestionText}}</h4>
+    <div class="table-responsive">
+        <table class="table custom-width text-justify">
+          <tbody>
+            <tr ng-repeat="answer in answers | filter : {questionId:clickedQuestionId}">
+              <td>
+                    <p class="small text-muted" >{{answer.time}}</p>
+                    <p>{{answer.answerText}}</p>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div> 
+</div> 
+</form>

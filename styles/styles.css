@@ -1,0 +1,42 @@
+.custom-width {
+	width: 82% !important;
+}
+
+.overflow {
+	height: 400px;
+	overflow: auto;
+}
+
+.item-to-press {
+	cursor:pointer; 
+}
+
+.position-fixed {
+	position: fixed; 
+}
+
+.position-relative {
+	position: relative; 
+	height: 50px;
+
+}
+
+
+.margin-bottom{
+	margin-bottom: 10px;
+
+::-webkit-scrollbar
+{
+  width: 12px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.5);
+}
